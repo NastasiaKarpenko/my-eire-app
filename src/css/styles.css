@@ -1,0 +1,69 @@
+/*color scheme
+#FCF8EE - whitish
+#FAB300 - yellow  or #FFC738
+#459078 - green
+#956F89 - liliac
+#0B3D2D - dark green
+*/
+
+:root {
+    /*
+  COLORS
+  */
+    --main-branding-color:#459078;
+    --buttons-color:#956F89;
+    --fonts-color:#FAB300;
+    --header-footer-color: #0B3D2D ;
+    --main-background-color:#FCF8EE;
+   /* --main-background-color-opaque:#eae7dc9a;
+    --main-background-color-opaque-2:#eae7dce0;*/
+
+  /*
+  SPACING
+  --space-sm: 5px;
+  --space-md: 10px;
+  --space-lg: 15px;
+  --space-xl: 30px;
+
+  --border-rad: 10px;
+
+  
+  FONT
+ 
+  --font-sm: 14px;
+  --font-md: 18px;
+  --font-lg: 28px;
+  --font-weight-bold: 800;*/
+}
+
+body{
+    background-color: var(--main-background-color);
+    color: var(--main-branding-color);
+}
+.navbar {
+    background-color: var(--header-footer-color);
+    color: var( --main-background-color);
+    padding: 10px 0;
+    text-align: right;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 100px;
+  }
+  .navbar a {
+    text-decoration: none; 
+    margin-right: 20px; 
+}
+
+.navbar a:hover {
+    color: var( --buttons-color); 
+  }
+  
+.navbar a:visited {
+    color: var( --fonts-color); 
+  }
+  
+.navbar a:active {
+    color: var( --buttons-color); 
+  }
+  
