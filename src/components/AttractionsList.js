@@ -3,7 +3,7 @@ function AttractionsList() {
     return (
       <div>
         
-            Attraction of Ireland
+            A list with nice photos
          
       </div>
     );

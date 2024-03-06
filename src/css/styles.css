@@ -1,8 +1,10 @@
+
+
 /*color scheme
 #FCF8EE - whitish
 #FAB300 - yellow  or #FFC738
 #459078 - green
-#956F89 - liliac
+#956F89 - violet
 #0B3D2D - dark green
 */
 
@@ -56,7 +58,7 @@ body{
 }
 
 .navbar a:hover {
-    color: var( --buttons-color); 
+    color: var( --buttons-color)!important;
   }
   
 .navbar a:visited {
@@ -64,6 +66,6 @@ body{
   }
   
 .navbar a:active {
-    color: var( --buttons-color); 
+    color: var( --main-background-color)!important; 
   }
   

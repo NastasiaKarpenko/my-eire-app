@@ -1,10 +1,11 @@
+import Сarousel from "../components/Сarousel";
 
 function Home() {
     return (
       <div>
         
-            Home page. Hi
-         
+         <h2>Home page. Hi there!</h2> 
+         <Сarousel />
       </div>
     );
   }
