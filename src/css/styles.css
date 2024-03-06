@@ -44,7 +44,9 @@ body{
 }
 .navbar {
     background-color: var(--header-footer-color);
-    color: var( --main-background-color);
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
     padding: 10px 0;
     text-align: right;
     width: 100%;
@@ -52,20 +54,45 @@ body{
     left: 0;
     right: 100px;
   }
-  .navbar a {
+  .navbar a, .footer a {
+    color: var( --main-background-color);
     text-decoration: none; 
     margin-right: 20px; 
 }
 
-.navbar a:hover {
+.navbar a:hover, .footer a:hover {
     color: var( --buttons-color)!important;
   }
   
-.navbar a:visited {
-    color: var( --fonts-color); 
+.navbar a:visited, .footer a:visited {
+    color: var( --main-background-color);
   }
   
 .navbar a:active {
-    color: var( --main-background-color)!important; 
+    color: var( --fonts-color)!important; 
   }
   
+
+.footer{
+    background-color: var(--header-footer-color);
+    padding: 10px 0;
+    text-align: right;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .roboto-serif-ireland {
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "GRAD" 70;
+  }
+
