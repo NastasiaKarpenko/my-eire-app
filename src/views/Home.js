@@ -1,9 +1,9 @@
+import AttractionsList from "../components/AttractionsList";
 import Сarousel from "../components/Сarousel";
 
 function Home() {
     return (
       <div>
-         <h2>Home page. Hi there!</h2> 
          <Сarousel />
          <div className="roboto-serif-ireland">
             <h3>Welcome to Ireland!</h3>
@@ -41,7 +41,7 @@ function Home() {
             instruments such as the banjo, fiddle, flute, and many more.
             </p>
             <h3>Discover Ireland with us!</h3>
-            
+            <AttractionsList />
          </div>
       </div>
     );

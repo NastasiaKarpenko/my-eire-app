@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 import ImageGallery from "react-image-gallery";
 
-
-function Сarousel() {
 const images = [
   {
     original: "https://picsum.photos/id/1018/1000/600/",
@@ -15,15 +13,19 @@ const images = [
   {
     original: "https://picsum.photos/id/1019/1000/600/",
     thumbnail: "https://picsum.photos/id/1019/250/150/",
+  
   },
 ];
 
-class MyGallery extends React.Component {
-  render() { 
-    return <ImageGallery items={images} />;
-  }
-};
-   
-  }
-  
-  export default Сarousel;
+function Сarousel() {
+  return <ImageGallery
+    items={images}
+    showFullscreenButton={false}
+    showThumbnails={false}
+    showPlayButton={false}
+    autoPlay={true}
+    slideDuration={4000}
+  />;
+}
+
+export default Сarousel;
