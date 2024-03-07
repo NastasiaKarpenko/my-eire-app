@@ -1,22 +1,21 @@
-function Attraction({ name, img, description, date, place }) {
+function Attraction({ name, img, info, place }) {
 
-  // const dateFormatted = Date(date)
-  return (
-    <div class="attrItem">
-      <div class="attrImg">
-        <img src={img} alt="" />
+    // const dateFormatted = Date(date)
+    return (
+      <div class="attrItem">
+        <div class="attrImg">
+          <img src={img} alt="" />
+        </div>
+        <div class="attrMain">
+          <div class="attrTitle">{name}</div>
+          <div class="attrDesc">{info}</div>
+        </div>
+        <div class="attrLocation">{place}</div>
       </div>
-      <div class="attrMain">
-        <div class="attrDate">{date}</div>
-        <div class="attrTitle">{name}</div>
-        <div class="attrDesc">{description}</div>
-        <button class="attrMore"> MORE </button>
-      </div>
-      <div class="attrLocation">{place}</div>
-    </div>
-  );
-}
-
-export default Attraction;
-
-
+    );
+  }
+  
+  export default Attraction;
+  
+  
+  

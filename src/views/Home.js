@@ -1,11 +1,11 @@
-import AttractionsList from "../components/AttractionsList";
+import EventsList from "../components/EventsList";
 import Сarousel from "../components/Сarousel";
 
 function Home() {
     return (
       <div>
          <Сarousel />
-         <div className="roboto-serif-ireland">
+         <div className="roboto-serif-ireland welcome-sec">
             <h3>Welcome to Ireland!</h3>
             <p>
             Ireland is an island in the North Atlantic Ocean, in north-western Europe. It is separated 
@@ -41,7 +41,7 @@ function Home() {
             instruments such as the banjo, fiddle, flute, and many more.
             </p>
             <h3>Discover Ireland with us!</h3>
-            <AttractionsList />
+            <EventsList />
          </div>
       </div>
     );

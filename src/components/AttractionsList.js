@@ -1,71 +1,45 @@
 import Attraction from "./Attraction";
 import { useState, useEffect } from 'react';
 
-// API
-const baseURL = 'https://www.eventbriteapi.com/v3/events/search/';
-const token = 'APHIHYYVAZ4C52F65PE2';
-const URL = `${baseURL}?token=${token}&location.country=IE`
+function AttractionsList(){
+    const attractions = [
+        {name: 'Dublin and Trinity Library',
+        img: './images/IMG_1.jpg',
+        info: 'Величні круті скелі, що височіють над Атлантичним океаном на заході Ірландії, пропонують захоплюючі краєвиди та неперевершені фотографійні можливості.',
+        place: 'co. Louth'},
 
-const useFetchData = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+        {name: 'Cork',
+        img: './images/IMG_2',
+        info: 'Величні круті скелі, що височіють над Атлантичним океаном на заході Ірландії, пропонують захоплюючі краєвиди та неперевершені фотографійні можливості.',
+        place: 'Chart'},
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, {
-          method: 'POST'
-        });
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+        {name: 'Galway',
+        img: './images/IMG_2',
+        info: 'У північній частині Ірландії розташований цей унікальний природний феномен, який складається з тисяч геометрично правильних камяних стовпів.',
+        place: 'Chart'},
 
-    fetchData();
-  }, [url]);
+        {name: 'Killarney',
+        img: './images/IMG_2',
+        info: 'Цей прекрасний регіон розташований на заході Ірландії і славиться своїми гірськими пейзажами, озерами та болотами. Він є ідеальним місцем для прогулянок і досліджень природи.',
+        place: 'Chart'},
 
-  return { data, loading, error };
+        {name: 'Newgrange',
+        img: './images/IMG_2',
+        info: 'Це один з найстаріших мегалітних памяток у світі, старше навіть за єгипетські піраміди. Він є частиною багато тисяч років старої долини Бойн.',
+        place: 'Chart'},
+
+        {name: 'Giants Causeway',
+        img: './images/IMG_2',
+        info: 'Цей парк розташований на півдні Ірландії і відомий своїми прекрасними озерами, густими лісами та гірськими масивами. Він є найстарішим національним парком у країні.',
+        place: 'Chart'},
+
+    ]; 
+return (
+    <div className="attrContainer">
+        {attractions.map((attraction, key) => <Attraction key={key} name={attraction.name} info={attraction.info} place ={attraction.place}/>)
+}
+    </div>
+);  
 }
 
-const AttractionsList = () => {
-  const { data, loading, error } = useFetchData('https://www.eventbrite.com/api/v3/promoted/events')
-  
-  console.log(data)
-  const attractions = [
-    {name: 'Claregalway Drama Festival 2024', 
-    date: '14 - 22 Mar, 2024', 
-    description:'Prepare to be enthralled at the Claregalway Drama Festival, running from Thursday, March 14th to Friday, March 22nd, 2024, from 8:00 pm to 10:30 pm nightly. Hosted at the Claregalway...', 
-    place: 'Claregalway Community Centre, Claregalway H91 THH4, Ireland'},
-    {name: 'St. Patrick’s Day Festival 2024', 
-    date: '14 - 22 Mar, 2024', 
-    description:'Prepare to be enthralled at the Claregalway Drama Festival, running from Thursday, March 14th to Friday, March 22nd, 2024, from 8:00 pm to 10:30 pm nightly. Hosted at the Claregalway...', 
-    place: 'Claregalway Community Centre, Claregalway H91 THH4, Ireland'},
-    {name: 'Múscailt – Annual Arts Festival', 
-    date: '14 - 22 Mar, 2024', 
-    description:'Prepare to be enthralled at the Claregalway Drama Festival, running from Thursday, March 14th to Friday, March 22nd, 2024, from 8:00 pm to 10:30 pm nightly. Hosted at the Claregalway...', 
-    place: 'Claregalway Community Centre, Claregalway H91 THH4, Ireland'},
-  ]
-
-    return (
-      <div className="attrContainer">
-        
-        <Attraction
-          name={"NEW event"}
-          description={"khsadkajs hdkjahd kajhsdkjahsk djhaskdjhaskjdha skjhaskdjh sad"}
-          img={'https://picsum.photos/id/1018/1000/600/'}
-          place={'Claregalway Community Centre, Claregalway H91 THH4, Ireland'}
-          date={"2024"}
-        />
-         {attractions.map((attraction, key) => <Attraction key={key} name={attraction.name} date={attraction.date} description={attraction.description} place ={attraction.place}/>)
-
-         }
-      </div>
-    );
-  }
-  
-  export default AttractionsList;
+export default AttractionsList;
