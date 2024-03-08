@@ -82,7 +82,7 @@ function Form() {
         />
         {handleValidationError("email")}
 
-        <label htmlFor="journey" className="formLabel">What adventure you prefear to be first</label>
+        <label htmlFor="journey" className="formLabel">What adventure do you choose to be first?</label>
         <select
           name="journey"
           placeholder="Galway"

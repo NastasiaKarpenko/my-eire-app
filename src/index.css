@@ -48,13 +48,9 @@ body {
 #956F89 - violet
 #0B3D2D - dark green
 */
-
 .navbar {
   background-color: var(--header-footer-color);
   position: sticky;
-  font-family: "Alfa Slab One", serif;
-  font-weight: 400;
-  font-style: normal;
   padding: 10px 0;
   text-align: right;
   width: 100%;
@@ -90,7 +86,6 @@ body {
   justify-content: space-around;
   background-color: var(--header-footer-color);
   padding: 10px 0;
-  /* text-align: right; */
   width: 100%;
   height: 100px;
   font-weight: 200;
@@ -117,11 +112,17 @@ h3 {
   padding: 25px 50px;
 }
 
+.welcome-sec h2 {
+  text-align: center;
+}
+
 /* Event */
 
 .eventContainer {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center; 
+  align-items: center;
 }
 
 .eventItem {
@@ -131,7 +132,7 @@ h3 {
   border-radius: 5px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content:space-around;
   margin-bottom: 15px;
 }
 
@@ -189,7 +190,22 @@ h3 {
   width: 100%;
   height: 50px;
 }
+.eventBtn{
+  background-color: var(--buttons-color);
+  border-color: var(--buttons-color);
+  color: var(--main-background-color);
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 15px 30px;
+  position: relative;
+  margin-top: 15px;
+}
 
+.eventBtn:hover{
+  background-color: var(--main-background-color);
+  border-color: var(--buttons-color);
+  color: var(--buttons-color);
+}
 /*Attraction*/
 .attrContainer {
   display: flex;
@@ -289,10 +305,15 @@ h3 {
 
 .formBtn {
   border: none;
-  background-color: #0b3d2d;
+  background-color: var(--header-footer-color);
   color: white;
   border-radius: 5px;
   padding: 15px 30px;
   position: relative;
   margin-top: 15px;
+}
+
+.formBtn:hover{
+  background-color: var(--main-branding-color);
+  color: var(--main-background-color);
 }

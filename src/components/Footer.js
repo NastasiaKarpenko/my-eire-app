@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 function Footer() {
 
     return (
-      <div className = "footer">
-        <span> Welcome to Ireland </span>
+      <div className = "footer roboto-serif-ireland ">
+        <span> Welcome to Ireland! </span>
+        <span>Bus excursion. Personal guide. </span>
+        <span>Customized trip plan.</span>
          <nav>
             <Link to="/">Home</Link>
             <Link to="/Attractions">What to see</Link>

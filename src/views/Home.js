@@ -6,7 +6,7 @@ function Home() {
       <div>
          <Сarousel />
          <div className="roboto-serif-ireland welcome-sec">
-            <h3>Welcome to Ireland!</h3>
+            <h2>Welcome to Ireland!</h2>
             <p>
             Ireland is an island in the North Atlantic Ocean, in north-western Europe. It is separated 
             from Great Britain to its east by the North Channel, the Irish Sea, and St George's Channel. 
@@ -40,7 +40,7 @@ function Home() {
             you can enjoy authentic Irish music live. Traditional Irish music has deep roots and is performed on various 
             instruments such as the banjo, fiddle, flute, and many more.
             </p>
-            <h3>Discover Ireland with us!</h3>
+            <h2>Discover Ireland with us!</h2>
             <EventsList />
          </div>
       </div>
