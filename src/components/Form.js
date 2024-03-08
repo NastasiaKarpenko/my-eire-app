@@ -1,67 +1,104 @@
- import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function Form() {
- 
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      phone: '',
-      email: '',
-      selectedOption: '',
-      message: 'Please fill the form down bellow'
-    });
-  
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormData({
-        ...formData,
-        [name]: value,
-        message = 'Thank you for your request! We will contact you during next 24 hours';
-      });
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      console.log(formData);
-    };
-  
-    return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter your Name
-          <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Enter your Last Name
-          <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Your mobile number
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Enter your email
-          <input type="email" name="email" value={formData.email} onChange={handleChange} />
-        </label>
-        <br />
-        
-        <label>
-        What adventure you prefear to be first
-          <select name="selectedOption" value={formData.selectedOption} onChange={handleChange}>
-            <option value="">What</option>
-            <option value="option1">Опція 1</option>
-            <option value="option2">Опція 2</option>
-            <option value="option3">Опція 3</option>
-          </select>
-        </label>
-        <br />
-        <button type="submit">Send</button>
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    journey: "",
+  };
+
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("Required"),
+    lastName: Yup.string().required("Required"),
+    phone: Yup.number("Must be a number")
+      .positive("Can't contain -")
+      .required("Required"),
+    email: Yup.string("Must be a string").required("Required"),
+    journey: Yup.string().required("Required"),
+  });
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: () => setIsSubmitted(true)
+  });
+
+  const getFormikValidationErrorHandler = (formik) => (name) =>
+    formik.touched[name] && formik.errors[name] ? (
+      <div className="formError">
+        <span className="">{formik.errors[name]}</span>
+      </div>
+    ) : null;
+
+  const handleValidationError = getFormikValidationErrorHandler(formik);
+
+  return (
+    <div className="formWrapper">
+      <h3 className="formNotice">
+        {isSubmitted
+          ? "Thank you for your request! We will contact you during next 24 hours"
+          : "Fill the form down bellow"}
+      </h3>
+      <form onSubmit={formik.handleSubmit} className="formContainer">
+        <label htmlFor="firstName" className="formLabel">First Name</label>
+        <input
+          name="firstName"
+          placeholder="Jane"
+        className="formInput"   
+          {...formik.getFieldProps("firstName")}
+        />
+        {handleValidationError("firstName")}
+
+        <label htmlFor="lastName" className="formLabel">Last Name</label>
+        <input
+          name="lastName"
+          placeholder="Bradbery"
+          className="formInput"
+          {...formik.getFieldProps("lastName")}
+        />
+        {handleValidationError("lastName")}
+
+        <label htmlFor="phone" className="formLabel">Phone Number</label>
+        <input
+          name="phone"
+          placeholder="087*****09"
+          className="formInput"
+          {...formik.getFieldProps("phone")}
+        />
+        {handleValidationError("phone")}
+
+        <label htmlFor="email" className="formLabel">Enter your email</label>
+        <input
+          name="email"
+          placeholder="example@gmail.com"
+          className="formInput"
+          {...formik.getFieldProps("email")}
+        />
+        {handleValidationError("email")}
+
+        <label htmlFor="journey" className="formLabel">What adventure you prefear to be first</label>
+        <select
+          name="journey"
+          placeholder="Galway"
+          className="formInput"
+          {...formik.getFieldProps("journey")}
+        >
+          <option selected value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
+        {handleValidationError("journey")}
+
+        <button type="submit" className="formBtn">Submit</button>
       </form>
-    );
-  
-  }
-  
-  export default Form;
+    </div>
+  );
+}
+
+export default Form;

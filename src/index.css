@@ -239,3 +239,60 @@ h3 {
   width: 100%;
   height: 50px;
 }
+
+
+/* Form */
+.formWrapper {
+  min-height: 500px;
+  height: 100vh;
+}
+
+.formNotice {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.formContainer {
+  width: 500px;
+  margin: auto;
+}
+
+
+.formInput {
+  width: 100%;
+  margin: 15px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.formLabel {
+  display: block;
+}
+
+.formLabel:not(:first-child) {
+  padding-top: 2.25rem;
+}
+
+.formError {
+  position: relative;
+  height: 0;
+  color: red;
+}
+
+.formError > span {
+  position: absolute;
+  top: -0.5rem;
+}
+
+.formBtn {
+  border: none;
+  background-color: #0b3d2d;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 30px;
+  position: relative;
+  margin-top: 15px;
+}
