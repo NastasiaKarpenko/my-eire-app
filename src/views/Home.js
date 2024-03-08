@@ -2,7 +2,7 @@ import EventsList from "../components/EventsList";
 import Сarousel from "../components/Сarousel";
 
 function Home() {
-    return (
+   return (
       <div>
          <Сarousel />
          <div className="roboto-serif-ireland welcome-sec">

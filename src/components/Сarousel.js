@@ -24,7 +24,10 @@ function Сarousel() {
     showThumbnails={false}
     showPlayButton={false}
     autoPlay={true}
-    slideDuration={4000}
+    slideDuration={700}
+    slideInterval={4000}
+    lazyLoad={true}
+    useTranslate3D={false}
   />;
 }
 

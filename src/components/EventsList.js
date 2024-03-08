@@ -1,41 +1,19 @@
 import Event from "./Event";
 import { useState, useEffect } from 'react';
-
-// API
-const baseURL = 'https://www.eventbriteapi.com/v3/events/search/';
-const token = 'APHIHYYVAZ4C52F65PE2';
-const URL = `${baseURL}?token=${token}&location.country=IE`
-
-const useFetchData = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, {
-          method: 'POST'
-        });
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  return { data, loading, error };
-}
+import { getData } from "../db/firebase";
 
 const EventsList = () => {
-  const { data, loading, error } = useFetchData('https://www.eventbrite.com/api/v3/promoted/events')
-  
-  console.log(data)
+
+
+  // TODO: Add data to firebase https://console.firebase.google.com/u/0/project/project-341480378113140565/firestore/data/~2Fevents~2FGNGIRg2e8yoYlXe5afGn 
+  // TODO: uncomment this!!!
+  // const [events, setEvents] = useState([])
+  // useEffect(() => {
+  //   getData().then(result => setEvents(result))
+  // }, [])
+
+  // console.log(data)
+
   const events = [
     {name: 'Claregalway Drama Festival 2024', 
     date: '14 - 22 Mar, 2024', 

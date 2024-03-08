@@ -1,7 +1,7 @@
 import Attraction from "./Attraction";
 import { useState, useEffect } from 'react';
 
-function AttractionsList(){
+function AttractionsList() {    
     const attractions = [
         {name: 'Dublin and Trinity Library',
         img: './images/IMG_1.jpg',

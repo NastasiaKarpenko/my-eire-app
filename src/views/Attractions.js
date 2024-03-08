@@ -1,4 +1,5 @@
 import AttractionsList from "../components/AttractionsList";
+
 function Attractions() {
     return (
       <div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const path = window.location.pathname;
@@ -6,10 +6,10 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar roboto-serif-ireland">
-        <Link to="/">Home</Link>
-        <Link to="/Attractions">What to see</Link>
-        <Link to="/Blog"> Get to know Ireland</Link>
-        <Link to="/ContactForm">Book your Adventure</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/Attractions">What to see</NavLink>
+        <NavLink to="/Blog"> Get to know Ireland</NavLink>
+        <NavLink to="/ContactForm">Book your Adventure</NavLink>
       </nav>
     </div>
   );

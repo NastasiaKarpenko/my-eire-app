@@ -7,21 +7,22 @@ function Form() {
       lastName: '',
       phone: '',
       email: '',
-      selectedOption: ''
+      selectedOption: '',
+      message: 'Please fill the form down bellow'
     });
   
     const handleChange = (event) => {
       const { name, value } = event.target;
       setFormData({
         ...formData,
-        [name]: value
+        [name]: value,
+        message = 'Thank you for your request! We will contact you during next 24 hours';
       });
     };
   
     const handleSubmit = (event) => {
       event.preventDefault();
       console.log(formData);
-      message = 'Thank you for your request! We will contact you during next 24 hours';
     };
   
     return (
@@ -46,6 +47,7 @@ function Form() {
           <input type="email" name="email" value={formData.email} onChange={handleChange} />
         </label>
         <br />
+        
         <label>
         What adventure you prefear to be first
           <select name="selectedOption" value={formData.selectedOption} onChange={handleChange}>
