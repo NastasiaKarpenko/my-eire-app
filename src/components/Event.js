@@ -2,7 +2,7 @@ function Event({ name, img, description, date, place, eventURL }) {
 
   
   const style={
-    backgroundImage: url(`https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/events/${img}?raw=true`),
+    backgroundImage: `url('https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/events/${img}?raw=true')`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat'
