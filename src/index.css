@@ -128,7 +128,7 @@ h3 {
 .eventItem {
   width: 300px;
   height: 500px;
-  border: 1px solid grey;
+  border: 1px solid;
   border-radius: 5px;
   display: flex;
   flex-flow: column nowrap;
@@ -153,6 +153,7 @@ h3 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  padding: 0px 8px;
 }
 
 .eventDate {
@@ -160,48 +161,65 @@ h3 {
   color: grey;
   font-weight: 300;
   padding-bottom: 15px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid var(--main-branding-color);
+  text-align: right;
+  
 }
 
 .eventTitle {
-  color: blue;
+  color: var(--buttons-color);
   font-weight: 800;
   font-size: large;
+  text-align: center;
   text-wrap: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
 }
 
 .eventDesc {
+  height: 150px;
+  overflow-x: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.eventMore, .eventBtn {
+  background-color: var(--buttons-color);
+  color: var(--main-background-color);
+  border: 3px solid var(--buttons-color);
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .eventMore {
-  width: 150px;
-  padding: 10px;
-  border: 3px solid green;
-  border-radius: 10px;
-  background: #fff;
+  width: 100px;
   align-self: center;
   justify-self: center;
+  
+}
+.eventBtn{
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.eventBtnSpace{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; 
 }
 
 .eventLocation {
   background-color: #a9c3bb;
   width: 100%;
-  height: 50px;
-}
-.eventBtn{
-  background-color: var(--buttons-color);
-  border-color: var(--buttons-color);
-  color: var(--main-background-color);
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 15px 30px;
-  position: relative;
-  margin-top: 15px;
+  height: 60px;
+  overflow-x: hidden; 
+  text-overflow: ellipsis; 
+  padding: 0px 8px;
+  box-sizing: border-box;
 }
 
-.eventBtn:hover{
+.eventBtn:hover, .eventMore:hover {
   background-color: var(--main-background-color);
   border-color: var(--buttons-color);
   color: var(--buttons-color);
@@ -219,26 +237,26 @@ h3 {
   margin-bottom: 15px;
 }
 
-.eventItem:nth-child(n + 1) {
+.attrItem:nth-child(n + 1) {
   margin-right: 15px;
 }
 
-.eventImg {
+.attrImg {
   height: 150px;
 }
 
-.eventImg > img {
+.attrImg > img {
   width: 100%;
 }
 
-.eventMain {
+.attrMain {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
 
-.eventTitle {
+.attrTitle {
   color: blue;
   font-weight: 800;
   font-size: large;
@@ -247,10 +265,10 @@ h3 {
   text-overflow: ellipsis;
 }
 
-.eventDesc {
+.attrDesc {
 }
 
-.eventLocation {
+.attrLocation {
   background-color: #a9c3bb;
   width: 100%;
   height: 50px;
