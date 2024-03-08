@@ -95,7 +95,7 @@ function Form() {
         </select>
         {handleValidationError("journey")}
 
-        <button type="submit" className="formBtn">Submit</button>
+        <div className="formBtnPlace"><button type="submit" className="formBtn">Submit</button></div>
       </form>
     </div>
   );

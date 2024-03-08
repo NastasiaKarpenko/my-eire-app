@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const path = window.location.pathname;
-  console.log(path);
+  
   return (
     <div>
       <nav className="navbar roboto-serif-ireland">

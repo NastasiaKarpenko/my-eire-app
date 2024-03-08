@@ -10,24 +10,7 @@ COLORS
   --fonts-color: #fab300;
   --header-footer-color: #0b3d2d;
   --main-background-color: #fcf8ee;
-  /* --main-background-color-opaque:#eae7dc9a;
-  --main-background-color-opaque-2:#eae7dce0;*/
 
-  /*
-SPACING
---space-sm: 5px;
---space-md: 10px;
---space-lg: 15px;
---space-xl: 30px;
-
---border-rad: 10px;
-
-FONT
-
---font-sm: 14px;
---font-md: 18px;
---font-lg: 28px;
---font-weight-bold: 800;*/
 }
 
 body {
@@ -41,13 +24,6 @@ body {
   color: var(--main-branding-color);
 }
 
-/*color scheme
-#FCF8EE - whitish
-#FAB300 - yellow  or #FFC738
-#459078 - green
-#956F89 - violet
-#0B3D2D - dark green
-*/
 .navbar {
   background-color: var(--header-footer-color);
   position: sticky;
@@ -98,6 +74,9 @@ h3 {
   font-family: "Alfa Slab One", serif;
   font-weight: 400;
   font-style: normal;
+}
+h2{
+  text-align: center ;
 }
 
 .roboto-serif-ireland {
@@ -232,36 +211,28 @@ h3 {
 .attrContainer {
   display: flex;
   flex-flow: row wrap;
-}
-
-.attrItem {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.attrItem:nth-child(n + 1) {
-  margin-right: 15px;
+  justify-content: center; 
+  align-items: center;
 }
 
 .attrImg {
-  height: 150px;
+  height: 400px;
 }
 
-.attrImg > img {
+/* .attrImg > img {
   width: 100%;
-}
+} */
 
 .attrMain {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .attrTitle {
-  color: blue;
+  color: var(--buttons-color);
   font-weight: 800;
   font-size: large;
   text-wrap: nowrap;
@@ -269,13 +240,12 @@ h3 {
   text-overflow: ellipsis;
 }
 
-.attrDesc {
-}
-
 .attrLocation {
   background-color: #a9c3bb;
   width: 100%;
-  height: 50px;
+  height: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
 
@@ -333,6 +303,11 @@ h3 {
   padding: 15px 30px;
   position: relative;
   margin-top: 15px;
+ 
+}
+.formBtnPlace {
+  display: flex;
+  justify-content: center;
 }
 
 .formBtn:hover{

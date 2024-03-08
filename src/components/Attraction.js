@@ -1,36 +1,36 @@
 function Attraction({ name, img, info, place, id }) {
-
   const isOdd = id % 2 === 1;
 
-    // const dateFormatted = Date(date)
-    return (
-      <div className="attrItem">
+  const style = {
+    backgroundImage: `url('${img}')`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
 
-        {
-          isOdd && (<div className="attrImg">
-          <img src={img} alt="" />
-          </div>)
-        }
+  const buildImg = () => (
+    <div className="attrImg" style={style}>
+      {img}
+      {/* <img src={img} alt="attractions" /> */}
+    </div>
+  );
 
-
-        <div className="attrMain">
-          <div className="attrTitle">{name}</div>
-          <div className="attrDesc">{info}</div>
+  return (
+    <div className="attrItem">
+      {isOdd && buildImg()}
+      <div className="attrMain">
+        <div className="attrTitle">
+          <h3>{name}</h3>
         </div>
-        <div className="attrLocation">{place}</div>
-
-        
-        {
-          !isOdd && (<div className="attrImg">
-          <img src={img} alt="" />
-          </div>)
-        }
-
+        <div
+          className="attrDesc"
+          dangerouslySetInnerHTML={{ __html: info }}
+        ></div>
       </div>
-    );
-  }
-  
-  export default Attraction;
-  
-  
-  
+      <div className="attrLocation">{place}</div>
+      {!isOdd && buildImg()}
+    </div>
+  );
+}
+
+export default Attraction;
