@@ -3,13 +3,21 @@ import ImageGallery from "react-image-gallery";
 
 const images = [
   {
-    original: "../images/carousel/Home_1.png",
+    original: "https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/carousel/Home_1.png?raw=true",
   },
   {
-    original: "https://picsum.photos/id/1015/1000/600/",
+    original: "https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/carousel/Home_2.png?raw=true",
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
+    original: "https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/carousel/Home_3.png?raw=true",
+  
+  },
+  {
+    original: "https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/carousel/Home_4.png?raw=true",
+  
+  },
+  {
+    original: "https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/carousel/Home_5.png?raw=true",
   
   },
 ];
