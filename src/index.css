@@ -145,6 +145,7 @@ h3 {
 }
 
 .eventImg > img {
+  height: 150px;
   width: 100%;
 }
 
