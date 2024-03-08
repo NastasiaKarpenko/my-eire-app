@@ -11,7 +11,7 @@ const EventsList = () => {
 
   console.log(events)
 
-  if (setEvents.length > 0) {
+  if (events.length > 0) {
     return (
     <>
     <div className="eventContainer">
@@ -33,7 +33,7 @@ const EventsList = () => {
     </div>
     </>);
   }else{
-    return(<h3>Data is loading...</h3>);
+    return(<h1>Data is loading... Give us a second ;)</h1>);
   }
 
   

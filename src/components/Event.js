@@ -1,10 +1,16 @@
 function Event({ name, img, description, date, place, eventURL }) {
 
-  // const dateFormatted = Date(date)
+  
+  const style={
+    backgroundImage: url(`https://github.com/NastasiaKarpenko/my-eire-app/blob/main/src/images/events/${img}?raw=true`),
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }
+  
   return (
     <div class="eventItem">
-      <div class="eventImg">
-        <img src="https://github.com/NastasiaKarpenko/my-eire-app/blob/6b56bf30aa231e54ba38fe3463c543f2b079b763/src/images/events/Forest%20Fest%202024%20.jpeg?raw=true" alt="events_picture" />
+      <div className="eventImg" style={style}>
       </div>
       <div class="eventMain">
         <div class="eventDate">{date}</div>
