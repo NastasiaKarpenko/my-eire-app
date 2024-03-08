@@ -3,8 +3,8 @@ import Form from "../components/Form";
 function ContactForm() {
     return (
       <div>
+        <h2>Would you like to Join us in a the next journey?</h2>
         
-        <h2>Fill the  Form to Join us in a road</h2>
         <Form />
       </div>
     );
