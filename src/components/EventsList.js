@@ -1,43 +1,62 @@
 import Event from "./Event";
-import { useState, useEffect } from "react";
-import { getData } from "../db/firebase";
+import React, { useState, useEffect } from "react";
+import { getElements } from "../db/firebase";
 
-const EventsList = () => {
-  // TODO: uncomment this!!!
-  const [events, setEvents] = useState([])
+const NUMBER_OF_EVENTS = 4;
+
+function EventsList() {
+  const [data, setData] = useState([]);
+  const [cursor, setCursor] = useState();
+  const [isDone, setIsDone] = useState(false);
   useEffect(() => {
-    getData().then(result => setEvents(result))
-  }, [])
+    getElements(NUMBER_OF_EVENTS).then((data) => {
+      setData(data.data);
+      setCursor(data.cursor);
+    });
+  }, []);
 
-  console.log(events)
+  const handleClick = () => {
+    getElements(NUMBER_OF_EVENTS, cursor).then((res) => {
+      if (res.data.length < NUMBER_OF_EVENTS || !res.cursor) {
+        setIsDone(true);
+        return;
+      }
+      setData([...data, ...res.data]);
+      setCursor(res.cursor);
+    });
+  };
 
-  if (events.length > 0) {
+  if (data.length > 0) {
     return (
-    <>
-    <div className="eventContainer">
-        
-        {events.map((event, key) => (
-          <Event
-            key={key}
-            name={event.name}
-            img={event.img}
-            date={event.date}
-            description={event.description}
-            place={event.place}
-            eventURL={event.eventURL}
-          />
-        ))}
-    </div>
-    <div className="eventBtnSpace">
-      <a href="https://www.eventbrite.com/" className="eventBtn roboto-serif-ireland" target="_blank" rel="noopener noreferrer">More Events</a>
-    </div>
-    </>);
-  }else{
-    return(<h1>Data is loading... Give us a second ;)</h1>);
+      <>
+        <div className="eventContainer">
+          {data.map((event, key) => (
+            <Event
+              key={key}
+              name={event.name}
+              img={event.img}
+              date={event.date}
+              description={event.description}
+              place={event.place}
+              eventURL={event.eventURL}
+            />
+          ))}
+        </div>
+        {!isDone && (
+          <div className="eventBtnSpace">
+            <button
+              className="eventBtn roboto-serif-ireland"
+              onClick={handleClick}
+            >
+              More Events
+            </button>
+          </div>
+        )}
+      </>
+    );
+  } else {
+    return <h1>event is loading... Give us a second ;)</h1>;
   }
-
-  
-  
-};
+}
 
 export default EventsList;

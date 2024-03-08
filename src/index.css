@@ -211,13 +211,16 @@ h3 {
 }
 
 .eventLocation {
-  background-color: #a9c3bb;
+  background-color: var(--main-branding-color);
+  color: var(--main-background-color);
   width: 100%;
   height: 60px;
+  text-align: center;
   overflow-x: hidden; 
   text-overflow: ellipsis; 
   padding: 0px 8px;
   box-sizing: border-box;
+  padding: 10px 0;
 }
 
 .eventBtn:hover, .eventMore:hover {
