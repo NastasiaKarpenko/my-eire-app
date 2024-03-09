@@ -8,7 +8,7 @@ function Blog() {
     backgroundRepeat: "no-repeat",
   };
   return (
-    <div>
+    <div className="blog">
       <ArticlesList />
       <div className="blogImg" style={style}></div>
     </div>

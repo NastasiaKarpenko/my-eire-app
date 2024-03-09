@@ -314,3 +314,7 @@ h2{
   background-color: var(--main-branding-color);
   color: var(--main-background-color);
 }
+
+.blog{
+  height: 100vh;
+}
